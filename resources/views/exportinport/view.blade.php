@@ -12,15 +12,8 @@
       <p>Export</p>
     </div>
   </div>
-  <div class="panel-body" style="">
+  <div class="panel-body">
 
-
-    <div class="btn-group">
-      <a href="{{action('ExportImport@exportProduct')}}" class="btn btn-primary">Now Stock</a>
-      <a href="{{action('ExportImport@exportSoldout')}}" class="btn btn-primary">Sold Out Product</a>
-      <a href="{{action('ExportImport@exportTransfer')}}" class="btn btn-primary">Transfer Record</a>
-      <a href="{{action('ExportImport@exportOtherCharge')}}" class="btn btn-primary">Other Charges</a>
-    </div>
 
     <div>
 
@@ -29,13 +22,13 @@
 
     <h3>Stock Export</h3>
     <div class="row">
-      <form action="" method="POST" role="form">
-
+      <form action="{{action('ExportImport@exportProduct')}}" method="POST" role="form">
+        {{csrf_field()}}
         <div class="col-md-2">
 
           <div class="form-group">
             <label for="">Start Date</label>
-            <input type="date" name="" class="form-control" id="">
+            <input type="date" name="start" class="form-control" id="">
           </div>
 
         </div>

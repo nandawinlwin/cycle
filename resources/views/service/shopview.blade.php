@@ -88,34 +88,18 @@
                         <tr>
                           <td>{{$id}}</td>
                           <td>
-                            @foreach($item_name as $item)
-                              @if($item->id == $p->item_name )
-                                {{$item->name}}
-                              @endif
-                            @endforeach
+                           {{$p->item_name}}
                           </td>
                           <td>
-                            @foreach($item_model as $item)
-                              @if($item->id == $p->item_model )
-                                {{$item->name}}
-                              @endif
-                            @endforeach
+                          {{$p->item_model}}
                           </td>
                           <td>{{$p->cycle_no}}</td>
                           <td>{{$p->fraim_no}}</td>
                           <td>
-                            @foreach($color as $item)
-                              @if($item->id == $p->color )
-                                {{$item->name}}
-                              @endif
-                            @endforeach
+                          {{$p->color}}
                           </td>
                           <td>
-                            @foreach($type as $item)
-                              @if($item->id == $p->type )
-                                {{$item->name}}
-                              @endif
-                            @endforeach
+                          {{$p->l_type}}
                           </td>
                           <td>
                             @foreach($w_shop as $item)
@@ -125,7 +109,10 @@
                             @endforeach
                           </td>
                           <td>{{$data->created_at}}</td>
-                          <td>{{$data->updated_at}}</td>
+                          <td><p class="text-danger">No</p></td>
+                          <td>
+                              <a href="{{action('StockController@service_success',$data->id)}}" class="btn btn-xs btn-primary">Success</a>
+                          </td>
                         </tr>
                         <?php $id++ ?>
                       @endif

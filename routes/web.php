@@ -24,7 +24,7 @@ Auth::routes();
     });
 
     
-    Route::get('export_product', 'ExportImport@exportProduct');
+    Route::post('export_product', 'ExportImport@exportProduct');
     Route::get('export_soldout', 'ExportImport@exportSoldout');
     Route::get('export_Transfer', 'ExportImport@exportTransfer');
     Route::get('export_othercharges', 'ExportImport@exportOtherCharge');

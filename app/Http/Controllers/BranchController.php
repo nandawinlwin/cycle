@@ -57,6 +57,17 @@ class BranchController extends Controller
 
         $product_all_sale = brochure::where('type','sale')->whereDate('created_at',">=",$date)->get();
         $product_all_buy = brochure::where('type','buy')->whereDate('created_at',">=",$date)->get();
+        //$other_charges = OtherCharges::where([['shop_id','=',$id],['created_at','>=',$date]])->get();
+        $other_charges = OtherCharges::where([['shop_id','=',$id],['created_at','>=',$date]])->get();
+        $product = product::where('shop_id',$id)->get();
+        $temp = 0;
+        foreach($other_charges as $data){
+            foreach($product as $p){
+                if($data->product_id == $p->id){
+                $temp += $data->other_charges;
+                }
+            }
+        }
 
 
         /* 
@@ -81,11 +92,13 @@ class BranchController extends Controller
         $product_tody_sale = product::where([['shop_id','=',$id],['sold_out','=',1]])->whereDate('sold_out_date',">=",$date)->get();
         $product_tody_buy = product::where([['shop_id','=',$id],['sold_out','=',null]])->whereDate('created_at',">=",$date)->get();
 
-        return view('branch.branch',compact('id','products','transfer','product_tody_sale','product_tody_buy','auser','model','name','color','money','type','ltype','credit','auser','shop'));
+        return view('branch.branch',compact('id','temp','products','transfer','product_tody_sale','product_tody_buy','auser','model','name','color','money','type','ltype','credit','auser','shop'));
 
        
         
     }
+
+    
 
     /**
      * Show the form for creating a new resource.

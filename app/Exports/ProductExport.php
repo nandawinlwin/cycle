@@ -9,14 +9,18 @@ use Illuminate\Http\Request;
 
 class ProductExport implements FromCollection, WithHeadings
 {
+
+    protected $request;
+    public function __construct(Request $request)
+    {
+        $this->request = $request;
+    }
     /**
      * @return \Illuminate\Support\Collection
      */
     public function collection()
     {
-
-
-        $products_all = product::where('sold_out', null)->get([
+        $products_all = product::where([['sold_out','=',null],['created_at','=','$this->request->start']])->get([
             'item_name',
             'item_model',
             'cycle_no',

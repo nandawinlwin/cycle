@@ -35,9 +35,6 @@
         <span class="glyphicon glyphicon-credit-card"></span>&nbsp Credit
     </a>
 
-    <a href="{{url('open/amount')}}" class="list-group-item">
-        <span class="glyphicon  glyphicon-ok"></span>&nbsp Opening
-    </a>
 
     <a href="{{url('service_rec')}}" class="list-group-item">
         <span class="glyphicon glyphicon-wrench"></span>&nbsp Service
@@ -95,9 +92,6 @@
         <span class="glyphicon glyphicon-credit-card"></span>&nbsp Credit
     </a>
 
-    <a href="{{url('open/amount')}}" class="list-group-item">
-        <span class="glyphicon  glyphicon-ok"></span>&nbsp Opening
-    </a>
 
     <a href="{{url('service_rec')}}" class="list-group-item">
         <span class="glyphicon glyphicon-wrench"></span>&nbsp Service
@@ -151,10 +145,7 @@
         <span class="glyphicon glyphicon-credit-card"></span>&nbsp Credit
     </a>
 
-    <a href="{{url('open/amount')}}" class="list-group-item">
-        <span class="glyphicon  glyphicon-ok"></span>&nbsp Opening
-    </a>
-
+    
     <a href="{{url('service_rec')}}" class="list-group-item">
         <span class="glyphicon glyphicon-wrench"></span>&nbsp Service
     </a>

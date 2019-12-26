@@ -105,6 +105,13 @@
             <strong>Service - </strong> {{count($transfer)}}
         </div>
     </div>
+
+    <div class="col-md-3">
+        <div class="notice notice-info">
+            <strong>Expense - </strong> {{$temp}}
+        </div>
+    </div>
+
 </div>
 
 
@@ -225,7 +232,7 @@
                 <?php $i = 0; ?>
                 @foreach($products as $p)
                 <?php
-                if ($t->name == $p->type) {
+                if ($t->id == $p->type) {
                     $i++;
                 }
                 ?>

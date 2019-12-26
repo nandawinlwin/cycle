@@ -21,18 +21,13 @@ class ExportImport extends Controller
         return view('exportinport.view');
     }
 
-    public function exportProduct(){
+    public function exportProduct(Request $request){
+        $start = $request->start;
         
-        return Excel::download(new ProductExport, 'Stock - '. date('d_m_Y').'.xlsx');
+        return Excel::download(new ProductExport($start), 'Stock - '. date('d_m_Y').'.xlsx');
 
     }
 
-
-    public function exportProduct_date(Request $request){
-        
-        return Excel::download(new ProductExport, 'Stock - '. date('d_m_Y').'.xlsx');
-
-    }
 
     public function exportSoldout(){
         
